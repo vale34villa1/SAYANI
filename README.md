@@ -54,7 +54,7 @@ We are a multidisciplinary team of 4 women committed to closing the gender gap t
 | :--- | :--- | :--- | :--- |
 | **Valeria Villacorta Landeo** | Project Lead / CEO | Industrial Engineering | [valeria.villacorta04@gmail.com](mailto:valeria.villacorta04@gmail.com) |
 | **Melany Arleth Hancco Alcahuamán** | Economic Strategist | Economics | [melany.hancco29@gmail.com](mailto:melany.hancco29@gmail.com) |
-| **Meri Rosario Alvarez Salazar** | *Mining Engineering* | .[meryrosarioas@gmail.com].| .(meryrosarioas@gmail.com). |
+| **Meri Rosario Alvarez Salazar** | *Growth Product Strategist* | *Mining Engineering* | [meryrosarioas@gmail.com](mailto:meryrosarioas@gmail.com) |
 | **[Nombre 4]** | *To be updated* | *To be updated* | *To be updated* |
 
 > **Note:** We are currently consolidating our diverse expertise in Industrial Engineering and Economics to ensure **PROTEGIDAS** is not just a tool, but a scalable social infrastructure for the Peruvian Amazon.
