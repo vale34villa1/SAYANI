@@ -37,18 +37,6 @@ A gamified module where virtual "seeds" represent savings. This serves as a prox
 | **Design** | Glassmorphism & High-Contrast UI/UX |
 | **Strategy** | PWA (Progressive Web App) |
 
-## 📦 Installation & Setup
-
-Since this is a **Single-File PWA Prototype**, no complex environment is required.
-
-1. **Clone the repo:**
-   ```bash
-   git clone [https://github.com/valeriavillacorta/protegidas-8m.git](https://github.com/valeriavillacorta/protegidas-8m.git)
-2. **Launch:**
-   Open index.html in any modern browser.
-3. **User Roles:**
-   - Girl/Student: Access to Anie and the Fintech module.
-   - Ally/Specialist: Access to the clinical monitoring dashboard.
 ## System Workflow
 graph LR
     A[User: Girl 6-17] -->|NLP Interaction| B(Anie AI Chatbot)
@@ -71,6 +59,16 @@ We are a multidisciplinary team of 4 women committed to closing the gender gap t
 ## Acknowledgments
 Developed with a focus on social engineering and gender equality. Dedicated to the girls of the Peruvian Amazon who are building the future today.
 "Empowering the invisible through technology that listens."
+
+## 📦 Installation & Setup
+Since this is a **Single-File PWA Prototype**, no complex environment is required.
 1. **Clone the repo:**
+   ```bash
+   git clone [https://github.com/valeriavillacorta/protegidas-8m.git](https://github.com/valeriavillacorta/protegidas-8m.git)
+2. **Launch:**
+   Open index.html in any modern browser.
+3. **User Roles:**
+   - Girl/Student: Access to Anie and the Fintech module.
+   - Ally/Specialist: Access to the clinical monitoring dashboard.
    ```bash
    git clone [https://github.com/valeriavillacorta/protegidas-8m.git](https://github.com/valeriavillacorta/protegidas-8m.git)
