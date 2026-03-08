@@ -1,5 +1,6 @@
-# 🛡️PROTEGIDAS | AI-Driven Ecosystem for Rural Child Welfare
+# PROTEGIDAS | AI-Driven Ecosystem for Rural Child Welfare
 **PROTEGIDAS** is a high-fidelity digital sanctuary engineered to mitigate systemic vulnerabilities for girls aged 6 to 17 in rural and Amazonian regions of Peru. Developed for the **8M Builder Journey**, it camouflages complex psychiatric triage within a gamified financial literacy ecosystem.
+![Uploading logo_PROTEGIDAS.png…]()
 
 ---
 
