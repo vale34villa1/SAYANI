@@ -1,12 +1,12 @@
-# PROTEGIDAS | AI-Driven Ecosystem for Rural Child Welfare
-**PROTEGIDAS** is a high-fidelity digital sanctuary engineered to mitigate systemic vulnerabilities for girls aged 6 to 17 in rural and Amazonian regions of Peru. Developed for the **8M Builder Journey**, it camouflages complex psychiatric triage within a gamified financial literacy ecosystem.
+# SAYANI | AI-Driven Ecosystem for Rural Child Welfare
+**SAYANI** is a high-fidelity digital sanctuary engineered to mitigate systemic vulnerabilities for girls aged 6 to 17 in rural and Amazonian regions of Peru. Developed for the **8M Builder Journey**, it camouflages complex psychiatric triage within a gamified financial literacy ecosystem.
 
 <img width="373" height="260" alt="image" src="https://github.com/user-attachments/assets/5ce9a2a8-4720-42d8-849b-3e0fe2b11be3" />
 
 ---
 
 ## The Vision (8M Impact)
-In remote contexts where mental health services are stigmatized, **PROTEGIDAS** acts as a silent vanguard. 
+In remote contexts where mental health services are stigmatized, **SAYANI** acts as a silent vanguard. 
 * **Empowerment through Agency:** Breaking the cycle of poverty by fostering financial decision-making ("La Casita").
 * **Stealth Intervention:** Using "Anie" (an AI proxy) to detect risks without compromising the user's safety in hostile environments.
 * **Geographic Equity:** Optimized for low-end devices and zero-connectivity (Offline-First).
@@ -86,3 +86,5 @@ protected-app/
     ├── en.json         # English
     ├── qu.json         # Quechua (Collao/Cusco)
     └── ay.json         # Aymara
+    └── ash.json        # Ashaninka
+
