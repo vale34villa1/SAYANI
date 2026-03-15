@@ -1,0 +1,23 @@
+{
+  "nav_mision": "Ruwayninchi",
+  "nav_tech": "Yachaykuna",
+  "nav_eco": "Kawsaypacha",
+  "nav_plans": "Ñankuna",
+  "nav_auth": "Hampiqpaq",
+  "hero_badge": "Sallqa pacha • Hamut'ay IA",
+  "hero_title": "Mana rikuna <span class='text-[#FF8BA7] italic'>allin kawsayta</span> waqaychaspa.",
+  "hero_desc": "Sipas wawakunata qhawaspa IA yachaywan, qullqi kamachiymanta yachachispa (6 watayuqmanta 17 watayuqkama).",
+  "btn_pilot": "QALLARIY",
+  "btn_anie": "Anie riqsiypaq",
+  "mision_title": "¿Imatataq Sayani ruwan?",
+  "mision_desc": "Kayqa huk amachana llikam, qullqi yachaywan yanapachikuspa sapa p'unchay wawakunap yuyayninta qhawanapaq.",
+  "eco_title": "Pakasqa Amachana Llika",
+  "eco_status": "Llikaqa allinmi: 100% Offline-First",
+  "chat_welcome": "¡Rimaykullay! Anie kani. ¿Imaynataq p'unchayniyki karqan? Willaway, kaypiqa hawkallam kanki.",
+  "chat_placeholder": "Kaypi qillqay (ej: 'mancharisqa kachkani')...",
+  "plan_free": "Qasi ñan",
+  "plan_inst": "Yachay wasipaq",
+  "plan_spec": "Hampiqpaq",
+  "auth_user_title": "¡Rimaykullay, Panay!",
+  "auth_user_subtitle": "Sutiykita qillqay anatañapaq."
+}
