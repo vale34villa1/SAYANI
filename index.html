@@ -23,30 +23,29 @@
     </style>
 </head>
 <body class="overflow-x-hidden">
-
     <nav class="flex justify-between items-center px-6 md:px-16 py-6 sticky top-0 bg-white/80 backdrop-blur-md z-[100] border-b border-gray-100">
         <div class="flex items-center gap-3">
             <img src="logo.jpg" alt="Logo" class="w-10 h-10 rounded-xl object-cover">
             <span class="lexend text-xl tracking-tighter uppercase font-black text-slate-800">SAYANI</span>
         </div>
-        
         <div class="hidden lg:flex gap-8 font-bold text-[10px] uppercase tracking-widest text-slate-400">
-            <a href="#mision" class="hover:text-[#7161EF] transition">Misión</a>
-            <a href="#tecnologia" class="hover:text-[#7161EF] transition">Tecnología</a>
-            <a href="#ecosistema" class="hover:text-[#7161EF] transition">Ecosistema</a>
-            <a href="#planes" class="hover:text-[#7161EF] transition">Planes</a>
+            <a href="#mision" class="hover:text-[#7161EF] transition" data-i18n="nav_mision">Misión</a>
+            <a href="#tecnologia" class="hover:text-[#7161EF] transition" data-i18n="nav_tech">Tecnología</a>
+            <a href="#ecosistema" class="hover:text-[#7161EF] transition" data-i18n="nav_eco">Ecosistema</a>
+            <a href="#planes" class="hover:text-[#7161EF] transition" data-i18n="nav_plans">Planes</a>
         </div>
+        
         <div class="flex items-center gap-4">
-            <div class="flex bg-slate-100 p-1 rounded-xl border border-slate-200 text-[9px] font-black">
-                <button onclick="changeLang('es')" id="btn-es" class="lang-btn lang-active px-2 py-1 rounded-lg">ES</button>
-                <button onclick="changeLang('en')" id="btn-en" class="lang-btn px-2 py-1 rounded-lg text-slate-400">EN</button>
-                <button onclick="changeLang('qu')" id="btn-qu" class="lang-btn px-2 py-1 rounded-lg text-slate-400">QU</button>
-                <button onclick="changeLang('ay')" id="btn-ay" class="lang-btn px-2 py-1 rounded-lg text-slate-400">AY</button>
-                <button onclick="changeLang('ash')" id="btn-ash" class="lang-btn px-2 py-1 rounded-lg text-slate-400">ASH</button>
-            </div>
-            <button onclick="showAuth('specialist')" class="bg-slate-900 text-white px-5 py-2.5 rounded-full font-bold text-[9px] tracking-widest uppercase hover:bg-[#7161EF] transition-all">Acceso Especialista</button>
+        <div class="flex bg-slate-100 p-1 rounded-xl border border-slate-200 text-[9px] font-black">
+            <button onclick="changeLang('es')" id="btn-es" class="lang-btn lang-active px-2 py-1 rounded-lg">ES</button>
+            <button onclick="changeLang('en')" id="btn-en" class="lang-btn px-2 py-1 rounded-lg text-slate-400">EN</button>
+            <button onclick="changeLang('qu')" id="btn-qu" class="lang-btn px-2 py-1 rounded-lg text-slate-400">QU</button>
+            <button onclick="changeLang('ay')" id="btn-ay" class="lang-btn px-2 py-1 rounded-lg text-slate-400">AY</button>
+            <button onclick="changeLang('ash')" id="btn-ash" class="lang-btn px-2 py-1 rounded-lg text-slate-400">ASH</button>
         </div>
-    </nav>
+            <button onclick="showAuth('specialist')" data-i18n="nav_auth" class="bg-slate-900 text-white px-5 py-2.5 rounded-full font-bold text-[9px] tracking-widest uppercase hover:bg-[#7161EF] transition-all">Acceso Especialista</button>
+    </div>
+</nav>
 
     <div id="landing-page">
         <header class="px-6 md:px-16 py-16 grid lg:grid-cols-2 gap-16 items-center">
