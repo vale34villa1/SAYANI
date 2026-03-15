@@ -6,7 +6,7 @@
     <title>SAYANI | PROTEGIDAS - IA & Bienestar Rural</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Lexend:wght@700;900&display=swap" rel="stylesheet">
-    
+
     <style>
         :root { --p-rose: #FF8BA7; --p-violet: #7161EF; --p-dark: #1A1D23; }
         body { font-family: 'Plus Jakarta Sans', sans-serif; background: #FDFBFF; color: var(--p-dark); scroll-behavior: smooth; }
@@ -29,6 +29,7 @@
             <img src="logo.jpg" alt="Logo" class="w-10 h-10 rounded-xl object-cover">
             <span class="lexend text-xl tracking-tighter uppercase font-black text-slate-800">SAYANI</span>
         </div>
+        
         <div class="hidden lg:flex gap-8 font-bold text-[10px] uppercase tracking-widest text-slate-400">
             <a href="#mision" class="hover:text-[#7161EF] transition">Misión</a>
             <a href="#tecnologia" class="hover:text-[#7161EF] transition">Tecnología</a>
@@ -391,30 +392,36 @@
             document.getElementById('auth-layer').classList.add('hidden');
             document.body.style.overflow = 'auto';
         }
-
-async function changeLang(lang) {
-    try {
-        const response = await fetch(`./public/lang/${lang}.json`);
-        const texts = await response.json();
-
-        // Actualizar visualmente los botones de idioma
-        document.querySelectorAll('.lang-btn').forEach(btn => {
-            btn.classList.remove('lang-active', 'text-slate-400');
-            if(btn.id !== `btn-${lang}`) btn.classList.add('text-slate-400');
-        });
-        document.getElementById(`btn-${lang}`).classList.add('lang-active');
-
-        // Traducir elementos marcados
-        document.querySelectorAll('[data-i18n]').forEach(el => {
-            const key = el.getAttribute('data-i18n');
-            if (texts[key]) el.innerHTML = texts[key];
-        });
-
-    } catch (error) {
-        console.error("Error al cargar el idioma:", error);
-    }
-}
-
+        
+        async function changeLang(lang) {
+            try {
+                // Cambiamos la ruta: si tus archivos están en public/lang/en el servidor se accede como /lang/
+                const response = await fetch(`./lang/${lang}.json`); 
+                if (!response.ok) throw new Error("No se encontró el archivo de idioma");
+                const texts = await response.json();
+                // 1. Actualizar botones visualmente
+                document.querySelectorAll('.lang-btn').forEach(btn => {
+                    btn.classList.remove('lang-active', 'text-slate-400');
+                    if(btn.id !== `btn-${lang}`) btn.classList.add('text-slate-400');
+                });
+                document.getElementById(`btn-${lang}`).classList.add('lang-active');
+                
+                // 2. Traducir textos normales (innerHTML)
+                document.querySelectorAll('[data-i18n]').forEach(el => {
+                    const key = el.getAttribute('data-i18n');
+                    if (texts[key]) el.innerHTML = texts[key];
+                });
+                
+                // 3. Traducir Placeholders (para inputs)
+                document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+                    const key = el.getAttribute('data-i18n-placeholder');
+                    if (texts[key]) el.placeholder = texts[key];
+                });
+            } catch (error) {
+                console.error("Error al cargar el idioma:", error);
+            }
+        }
+        
         // Detection diccionary of DEMO
 const ANALISIS_SEMANTICO = {
     critico: ['morir', 'mori', 'muerte', 'matar', 'sangre', 'auxilio', 'ayuda', 'suicidio'],
