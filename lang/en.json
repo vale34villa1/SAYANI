@@ -1,0 +1,23 @@
+{
+  "nav_mision": "Mission",
+  "nav_tech": "Technology",
+  "nav_eco": "Ecosystem",
+  "nav_plans": "Plans",
+  "nav_auth": "Specialist Access",
+  "hero_badge": "Amazon & Rural • Predictive AI",
+  "hero_title": "Protecting invisible <span class='text-[#FF8BA7] italic'>well-being</span>.",
+  "hero_desc": "Early risk detection through financial education and autonomous support for girls aged 6 to 17.",
+  "btn_pilot": "START PILOT",
+  "btn_anie": "Meet Anie",
+  "mision_title": "What does Sayani do?",
+  "mision_desc": "It is a protection ecosystem that uses financial education as a 'Trojan horse' to monitor mental health in rural areas.",
+  "eco_title": "Invisible Protection Ecosystem",
+  "eco_status": "System Status: 100% Offline-First",
+  "chat_welcome": "Hi! I'm Anie. How was your day? Tell me anything, we are safe here.",
+  "chat_placeholder": "Write here (e.g., 'I feel scared' or 'I am alone')...",
+  "plan_free": "Free Plan",
+  "plan_inst": "Institutional",
+  "plan_spec": "Specialist",
+  "auth_user_title": "Hi, Friend!",
+  "auth_user_subtitle": "Create your account to start playing."
+}
