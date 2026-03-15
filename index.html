@@ -3,359 +3,368 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PROTEGIDAS | Ecosistema de Bienestar y Protección IA</title>
+    <title>SAYANI | PROTEGIDAS - IA & Bienestar Rural</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Lexend:wght@700;900&display=swap" rel="stylesheet">
+    
     <style>
-        :root { --p-rose: #FF8BA7; --p-violet: #7161EF; --p-green: #27ae60; --p-dark: #1A1D23; }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; background: #FDFBFF; color: var(--p-dark); }
+        :root { --p-rose: #FF8BA7; --p-violet: #7161EF; --p-dark: #1A1D23; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #FDFBFF; color: var(--p-dark); scroll-behavior: smooth; }
         .lexend { font-family: 'Lexend', sans-serif; }
-        
-        /* Animaciones de entrada */
-        .fade-in { animation: fadeIn 0.8s ease-out forwards; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        
-        /* Efectos Glass y Bento */
         .glass { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(15px); border: 1px solid rgba(255,255,255,0.4); }
-        .bento-card { border-radius: 32px; background: white; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); border: 1px solid #F0F0F0; }
-        .bento-card:hover { transform: translateY(-8px); box-shadow: 0 30px 60px rgba(113, 97, 239, 0.1); }
-
-        /* Scanner Radar Effect */
+        .bento-card { border-radius: 32px; background: white; border: 1px solid #F0F0F0; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .bento-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(113, 97, 239, 0.08); }
+        .lang-active { background: white !important; box-shadow: 0 4px 10px rgba(0,0,0,0.05); color: var(--p-violet) !important; }
+        .hidden-section { display: none !important; }
         .scan-line { width: 100%; height: 3px; background: linear-gradient(90deg, transparent, var(--p-rose), transparent); position: absolute; animation: scanning 4s infinite ease-in-out; filter: blur(1px); z-index: 20; }
         @keyframes scanning { 0% { top: 0%; opacity: 0; } 50% { opacity: 1; } 100% { top: 100%; opacity: 0; } }
-
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #f1f1f1; }
-        ::-webkit-scrollbar-thumb { background: var(--p-rose); border-radius: 10px; }
+        .fade-in { animation: fadeIn 0.8s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
 <body class="overflow-x-hidden">
 
-    <div id="landing-page" class="relative">
-        <nav class="flex justify-between items-center px-6 md:px-16 py-6 sticky top-0 bg-white/80 backdrop-blur-md z-[50] border-b border-gray-100">
-            <div class="flex items-center gap-3">
-                <div class="w-11 h-11 bg-gradient-to-br from-[#FF8BA7] to-[#7161EF] rounded-2xl flex items-center justify-center text-white font-black shadow-lg shadow-pink-100">P</div>
-                <span class="lexend text-2xl tracking-tighter uppercase font-black text-slate-800">Protegidas</span>
-            </div>
-            <div class="hidden md:flex gap-10 font-bold text-sm text-slate-500">
-                <a href="#mision" class="hover:text-[#FF8BA7] transition">Misión</a>
-                <a href="#tecnologia" class="hover:text-[#FF8BA7] transition">Tecnología</a>
-                <a href="#impacto" class="hover:text-[#FF8BA7] transition">Ecosistema</a>
-            </div>
-            <button onclick="showAuth()" class="bg-slate-900 text-white px-8 py-3 rounded-full font-bold text-xs tracking-widest hover:bg-[#7161EF] transition-all transform hover:scale-105 active:scale-95 shadow-xl shadow-indigo-100 uppercase">Acceso Especialista</button>
-        </nav>
+    <nav class="flex justify-between items-center px-6 md:px-16 py-6 sticky top-0 bg-white/80 backdrop-blur-md z-[100] border-b border-gray-100">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-[#7161EF] rounded-xl flex items-center justify-center text-white font-black">S</div>
+            <span class="lexend text-xl tracking-tighter uppercase font-black text-slate-800">SAYANI</span>
+        </div>
+        <div class="hidden lg:flex gap-8 font-bold text-[10px] uppercase tracking-widest text-slate-400">
+            <a href="#mision" class="hover:text-[#7161EF] transition">Misión</a>
+            <a href="#tecnologia" class="hover:text-[#7161EF] transition">Tecnología</a>
+            <a href="#demo" class="hover:text-[#7161EF] transition">Demo IA</a>
+            <a href="#planes" class="hover:text-[#7161EF] transition">Planes</a>
+        </div>
+        <div class="flex items-center gap-4">
+            <button onclick="showAuth('specialist')" class="bg-slate-900 text-white px-5 py-2.5 rounded-full font-bold text-[9px] tracking-widest uppercase hover:bg-[#7161EF] transition-all">Acceso Especialista</button>
+        </div>
+    </nav>
 
+    <div id="landing-page">
         <header class="px-6 md:px-16 py-16 grid lg:grid-cols-2 gap-16 items-center">
             <div class="fade-in">
-                <div class="inline-flex items-center gap-2 bg-indigo-50 text-[#7161EF] px-5 py-2 rounded-full text-[10px] font-black tracking-[0.2em] uppercase mb-8">
-                    <span class="relative flex h-2 w-2">
-                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
-                    </span>
+                <div class="inline-flex items-center gap-2 bg-indigo-50 text-[#7161EF] px-5 py-2 rounded-full text-[10px] font-black tracking-widest uppercase mb-8">
                     Amazonía & Rural • IA Predictiva
                 </div>
-                <h1 class="lexend text-6xl md:text-[84px] leading-[0.95] text-slate-900 mb-8">
-                    Cuidando el <span class="text-[#FF8BA7] relative">bienestar<svg class="absolute -bottom-2 left-0 w-full" viewBox="0 0 300 20" fill="none"><path d="M5 15C50 5 150 5 295 15" stroke="#FF8BA7" stroke-width="4" stroke-linecap="round"/></svg></span> invisible.
+                <h1 class="lexend text-6xl md:text-[80px] leading-[0.9] text-slate-900 mb-8">
+                    Cuidando el <span class="text-[#FF8BA7] italic">bienestar</span> invisible.
                 </h1>
                 <p class="text-xl text-slate-500 leading-relaxed max-w-lg mb-12">
                     Detección temprana de riesgos mediante educación financiera y acompañamiento autónomo para niñas de 6 a 17 años.
                 </p>
                 <div class="flex flex-wrap gap-5">
-                    <button onclick="showAuth()" class="bg-[#7161EF] text-white px-12 py-5 rounded-[24px] font-black text-sm shadow-2xl shadow-indigo-200 hover:scale-105 transition-all">INICIAR PILOTO</button>
-                    <button class="px-10 py-5 rounded-[24px] font-bold border-2 border-slate-100 hover:bg-slate-50 transition-all text-slate-600">Conocer a Anie</button>
+                    <button onclick="showAuth('user')" class="bg-[#7161EF] text-white px-12 py-5 rounded-[24px] font-black text-sm shadow-2xl shadow-indigo-200 hover:scale-105 transition-all">INICIAR PILOTO</button>
+                    <a href="#demo" class="px-10 py-5 rounded-[24px] font-bold border-2 border-slate-100 hover:bg-slate-50 transition-all text-slate-600 flex items-center">Probar IA</a>
                 </div>
             </div>
-            
-            <div class="relative fade-in" style="animation-delay: 0.3s;">
-                <div class="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-r from-pink-50 to-indigo-50 rounded-full blur-3xl opacity-60"></div>
-                <div class="bento-card p-4 bg-white/40 glass">
-                    <div class="rounded-[40px] overflow-hidden relative group">
-                        <div class="absolute inset-0 bg-gradient-to-t from-[#7161EF]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=2070&auto=format&fit=crop" class="w-full h-[500px] object-cover transition duration-700 group-hover:scale-110" alt="Impacto Social">
-                        <div class="absolute bottom-8 left-8 right-8 p-6 glass rounded-3xl">
-                            <p class="lexend text-white text-lg">"Anie me enseñó a ahorrar para mi primer kit de ciencia."</p>
-                            <p class="text-white/80 text-xs mt-2 font-bold">— Lucía, 12 años (Loreto)</p>
-                        </div>
-                    </div>
+            <div class="relative bento-card p-4 glass overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=2070" class="w-full h-[500px] object-cover rounded-[32px]">
+                <div class="absolute bottom-10 left-10 right-10 p-6 glass rounded-3xl">
+                    <p class="lexend text-slate-800 text-lg italic">"Anie me enseñó a ahorrar para mi primer kit de ciencia."</p>
+                    <p class="text-slate-500 text-xs mt-2 font-bold">— Lucía, 12 años (Loreto)</p>
                 </div>
             </div>
         </header>
 
-        <section id="mision" class="px-6 md:px-16 py-24">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-                <div class="max-w-2xl">
-                    <h2 class="lexend text-5xl text-slate-900 mb-6 tracking-tight">Ecosistema de Protección Invisible</h2>
-                    <p class="text-slate-500 text-lg">No somos una app de salud mental convencional. Somos un entorno seguro camuflado en progreso financiero.</p>
+        <section id="mision" class="px-6 md:px-16 py-24 bg-slate-50">
+            <div class="max-w-4xl mx-auto text-center mb-16">
+                <h2 class="lexend text-4xl mb-6">¿Qué hace Sayani?</h2>
+                <p class="text-slate-500 text-lg">Es un ecosistema de protección que utiliza la educación financiera para monitorear la salud mental en zonas rurales, detectando patrones de riesgo antes de que se conviertan en crisis.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bento-card p-10">
+                    <div class="text-4xl mb-6">🤖</div>
+                    <h3 class="lexend text-xl mb-4">Anie: El Guardián</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">Chatbot de IA que se transforma en tu mascota favorita para diagnosticar bienestar emocional.</p>
                 </div>
-                <div class="flex gap-4">
-                    <div class="p-4 bg-white border border-slate-100 rounded-2xl shadow-sm">
-                        <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Estado del Sistema</p>
-                        <p class="text-green-500 font-bold">100% Offline-First</p>
-                    </div>
+                <div class="bento-card p-10 border-2 border-[#FF8BA7]/20">
+                    <div class="text-4xl mb-6">💡</div>
+                    <h3 class="lexend text-xl mb-4">Lámpara SOS</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">Botón de pánico camuflado para alertas silenciosas a especialistas.</p>
+                </div>
+                <div class="bento-card p-10">
+                    <div class="text-4xl mb-6">🏠</div>
+                    <h3 class="lexend text-xl mb-4">La Casita</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">Módulo Fintech donde el ahorro virtual evalúa la toma de decisiones.</p>
                 </div>
             </div>
+        </section>
 
-            <div class="grid md:grid-cols-12 gap-6">
-                <div class="md:col-span-8 bento-card p-12 bg-gradient-to-br from-slate-900 to-slate-800 text-white overflow-hidden relative">
-                    <div class="relative z-10">
-                        <div class="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center text-2xl mb-8">🤖</div>
-                        <h3 class="lexend text-3xl mb-4">Anie: El Guardián Autónomo</h3>
-                        <p class="text-slate-300 max-w-md leading-relaxed">Un chatbot de IA que se transforma en el animal favorito de la niña para diagnosticar bienestar emocional mediante lenguaje natural y empatía digital.</p>
+        <section id="demo" class="px-6 md:px-16 py-24 bg-white">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="lexend text-4xl mb-4">Experiencia Sayani</h2>
+                    <p class="text-slate-500 font-bold uppercase text-[10px] tracking-widest">Detección de riesgo invisible en tiempo real</p>
+                </div>
+                <div class="grid lg:grid-cols-2 gap-12 items-stretch">
+                    <div class="bento-card p-8 bg-white shadow-xl flex flex-col relative overflow-hidden border-2 border-slate-50">
+                        <div class="flex items-center gap-4 mb-8 border-b border-slate-100 pb-4">
+                            <div id="avatar-demo" class="w-12 h-12 bg-indigo-100 rounded-2xl flex items-center justify-center text-2xl shadow-inner">🐆</div>
+                            <div>
+                                <p class="text-[10px] font-black text-indigo-500 uppercase tracking-tighter">Anie (Modo Guardián)</p>
+                                <div class="flex items-center gap-1.5">
+                                    <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                                    <span class="text-[10px] text-slate-400 font-bold uppercase">En línea</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="chat-box" class="flex-1 h-80 overflow-y-auto mb-6 space-y-4 pr-2 text-sm">
+                            <div class="bg-slate-100 p-4 rounded-2xl rounded-tl-none max-w-[85%] text-slate-700">
+                                ¡Hola! Soy Anie. ¿Cómo estuvo tu día hoy? Cuéntame cualquier cosa, aquí estamos seguras.
+                            </div>
+                        </div>
+                        <div class="relative group">
+                            <input type="text" id="demo-input" onkeypress="if(event.key === 'Enter') simulateChat()" placeholder="Escribe aquí (ej: 'tengo miedo')..." class="w-full bg-slate-50 p-5 rounded-[24px] outline-none border-2 border-transparent focus:border-indigo-200 transition-all text-sm">
+                            <button onclick="simulateChat()" class="absolute right-3 top-1/2 -translate-y-1/2 bg-[#7161EF] text-white p-3 rounded-xl hover:scale-105 transition-all">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+                            </button>
+                        </div>
                     </div>
-                    <div class="absolute right-[-50px] bottom-[-50px] w-80 h-80 bg-[#7161EF] rounded-full blur-[120px] opacity-40"></div>
-                </div>
-                
-                <div class="md:col-span-4 bento-card p-10 bg-[#FF8BA7] text-white">
-                    <div class="w-14 h-14 bg-white/20 rounded-2xl flex items-center justify-center text-2xl mb-8">💡</div>
-                    <h3 class="lexend text-2xl mb-4">Lámpara SOS</h3>
-                    <p class="text-white/80 text-sm leading-relaxed">Botón de pánico camuflado para alertas silenciosas a especialistas y redes de confianza en situaciones de riesgo inminente.</p>
-                </div>
 
-                <div class="md:col-span-4 bento-card p-10 border-2 border-slate-50">
-                    <div class="w-14 h-14 bg-indigo-50 text-[#7161EF] rounded-2xl flex items-center justify-center text-2xl mb-8">🏠</div>
-                    <h3 class="lexend text-2xl text-slate-800 mb-4">La Casita</h3>
-                    <p class="text-slate-500 text-sm leading-relaxed">Módulo Fintech donde el ahorro virtual es el vehículo para empoderar y evaluar la toma de decisiones.</p>
-                </div>
-
-                <div class="md:col-span-8 bento-card p-10 bg-indigo-50 flex items-center justify-between overflow-hidden group">
-                    <div class="max-w-sm">
-                        <h3 class="lexend text-2xl text-indigo-900 mb-4">Esqueleto de Cuidado</h3>
-                        <p class="text-indigo-700/60 text-sm">Visualización biométrica para especialistas que traduce interacciones en indicadores de salud física y emocional.</p>
-                    </div>
-                    <div class="w-40 h-40 bg-white rounded-full flex items-center justify-center shadow-inner group-hover:scale-110 transition-transform">
-                        <svg class="w-24 h-24 text-indigo-200" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm9 7h-6v13h-2v-6h-2v6H9V9H3V7h18v2z"/></svg>
+                    <div id="specialist-panel" class="bento-card p-8 bg-slate-900 text-white transition-all duration-700 relative overflow-hidden">
+                        <div id="status-tag" class="absolute top-8 right-8 bg-slate-800 text-slate-400 px-4 py-1.5 rounded-full text-[9px] font-black uppercase tracking-widest">Sistema Estable</div>
+                        <h3 class="lexend text-xl mb-2">Monitor de Salud</h3>
+                        <p class="text-[9px] font-black text-slate-500 uppercase tracking-widest mb-10">ID Paciente: Rural-LRT-04</p>
+                        
+                        <div class="space-y-8">
+                            <div class="bg-white/5 p-5 rounded-3xl border border-white/10">
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-[10px] font-black text-slate-400 uppercase">Riesgo Predictivo</span>
+                                    <span id="risk-percent" class="text-[10px] font-black text-indigo-400">0%</span>
+                                </div>
+                                <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                                    <div id="risk-bar" class="bg-indigo-500 h-full w-0 transition-all duration-1000"></div>
+                                </div>
+                            </div>
+                            <div class="flex justify-center py-4">
+                                <svg id="skeleton-svg" class="w-32 h-32 text-slate-700 transition-colors duration-500" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm9 7h-6v13h-2v-6h-2v6H9V9H3V7h18v2z"/>
+                                </svg>
+                            </div>
+                            <div id="alert-console" class="bg-black/40 p-5 rounded-3xl border border-white/5 font-mono text-[10px] text-slate-500 h-24 overflow-hidden italic">
+                                > Esperando interacción del usuario...
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
+
+        <section id="planes" class="px-6 md:px-16 py-24 bg-slate-50">
+            <h2 class="lexend text-4xl text-center mb-16">Nuestros Planes</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bento-card p-10 flex flex-col">
+                    <h4 class="lexend text-xl mb-2">Plan Free</h4>
+                    <p class="text-slate-400 text-sm mb-6">Para niñas independientes.</p>
+                    <ul class="text-slate-600 text-sm space-y-3 mb-8 flex-1">
+                        <li>• Acceso a Anie IA</li>
+                        <li>• Módulo de Ahorro Casita</li>
+                    </ul>
+                    <button onclick="showAuth('user')" class="w-full py-4 rounded-2xl border-2 border-slate-100 font-bold hover:bg-slate-50 transition">Comenzar</button>
+                </div>
+                <div class="bento-card p-10 border-2 border-[#7161EF] flex flex-col scale-105 bg-white shadow-xl">
+                    <h4 class="lexend text-xl mb-2 text-[#7161EF]">Institucional</h4>
+                    <p class="text-slate-400 text-sm mb-6">Escuelas y Gobiernos.</p>
+                    <ul class="text-slate-600 text-sm space-y-3 mb-8 flex-1">
+                        <li>• Dashboard de Análisis Grupal</li>
+                        <li>• Alertas Predictivas IA</li>
+                    </ul>
+                    <button class="w-full py-4 rounded-2xl bg-[#7161EF] text-white font-bold">Contactar</button>
+                </div>
+                <div class="bento-card p-10 flex flex-col">
+                    <h4 class="lexend text-xl mb-2 text-slate-900">Especialista</h4>
+                    <p class="text-slate-400 text-sm mb-6">Psicólogos y Médicos.</p>
+                    <ul class="text-slate-600 text-sm space-y-3 mb-8 flex-1">
+                        <li>• Monitor de Cuidado</li>
+                        <li>• Gestión de Pacientes</li>
+                    </ul>
+                    <button onclick="showAuth('specialist')" class="w-full py-4 rounded-2xl border-2 border-slate-100 font-bold hover:bg-slate-50 transition">Registrarse</button>
+                </div>
+            </div>
+        </section>
+
+        <footer class="bg-slate-900 text-white px-6 md:px-16 py-12 text-center">
+            <p class="text-slate-500 text-[9px] font-black uppercase tracking-widest">
+                © 2026 Qalia Health-Tech • Sayani Protegidas • 8M Builder Journey
+            </p>
+        </footer>
     </div>
 
-    <div id="auth-layer" class="fixed inset-0 z-[100] bg-white hidden items-center justify-center p-4">
+    <div id="auth-layer" class="fixed inset-0 z-[200] bg-white hidden flex items-center justify-center p-6">
         <div class="w-full max-w-xl relative">
-            <button onclick="hideAuth()" class="absolute -top-16 right-0 text-slate-400 hover:text-slate-900 flex items-center gap-2 font-bold tracking-widest text-xs transition">
-                ESC PARA CERRAR <span class="w-8 h-8 flex items-center justify-center border border-slate-200 rounded-full">×</span>
-            </button>
+            <button onclick="hideAuth()" class="absolute -top-16 right-0 text-slate-400 font-black text-xs">CERRAR ×</button>
             
-            <div id="login-form" class="bento-card p-12 shadow-2xl border-indigo-100">
-                <div class="w-16 h-16 bg-indigo-50 rounded-3xl flex items-center justify-center text-2xl mb-8">🔑</div>
-                <h3 class="lexend text-4xl mb-4 text-slate-900">Portal Aliados</h3>
-                <p class="text-slate-400 mb-10 text-lg">Acceso exclusivo para Psiquiatras, Psicólogos y Trabajadores Sociales.</p>
-                
+            <div id="form-user" class="bento-card p-12 shadow-2xl hidden-section">
+                <h3 class="lexend text-4xl mb-2">¡Hola, Amiga!</h3>
+                <p class="text-slate-400 mb-8">Crea tu cuenta para empezar a jugar.</p>
                 <div class="space-y-4">
-                    <div class="group">
-                        <input type="text" placeholder="Correo institucional" class="w-full bg-slate-50 p-6 rounded-[24px] outline-none border-2 border-transparent focus:border-indigo-100 focus:bg-white transition-all">
-                    </div>
-                    <div class="group">
-                        <input type="password" placeholder="Contraseña de seguridad" class="w-full bg-slate-50 p-6 rounded-[24px] outline-none border-2 border-transparent focus:border-indigo-100 focus:bg-white transition-all">
-                    </div>
-                    <button onclick="enterApp()" class="w-full bg-slate-900 text-white py-6 rounded-[24px] font-black tracking-widest uppercase text-xs hover:bg-[#7161EF] shadow-2xl shadow-indigo-100 transition-all mt-4">Ingresar al Dashboard</button>
-                    <div class="flex justify-between items-center mt-8">
-                        <p class="text-sm text-slate-400">¿Nuevo especialista?</p>
-                        <button onclick="toggleAuth('reg')" class="text-[#FF8BA7] font-bold text-sm underline">Solicitar Credenciales</button>
-                    </div>
+                    <input type="text" id="reg-nickname" placeholder="Tu nombre secreto" class="w-full bg-slate-50 p-6 rounded-[24px] outline-none">
+                    <select id="reg-pet" class="w-full bg-slate-50 p-6 rounded-[24px] outline-none text-slate-500 appearance-none">
+                        <option value="otorongo">Otorongo 🐆</option>
+                        <option value="alpaca">Alpaca 🦙</option>
+                        <option value="delfin">Delfín 🐬</option>
+                        <option value="perro">Perrito 🐶</option>
+                    </select>
+                    <button onclick="login('user')" class="w-full bg-[#FF8BA7] text-white py-6 rounded-[24px] font-black uppercase text-xs shadow-xl mt-4">Comenzar Aventura</button>
                 </div>
             </div>
 
-            <div id="reg-form" class="bento-card p-12 shadow-2xl border-pink-100 hidden">
-                <h3 class="lexend text-4xl mb-2 text-slate-900">Únete a la Red</h3>
-                <p class="text-slate-400 mb-10 font-medium">Postula como aliado en la protección infantil.</p>
+            <div id="form-specialist" class="bento-card p-12 shadow-2xl hidden-section">
+                <h3 class="lexend text-4xl mb-2">Portal Aliados</h3>
+                <p class="text-slate-400 mb-8">Ingreso exclusivo para profesionales.</p>
                 <div class="space-y-4">
-                    <input type="text" placeholder="Nombre completo" class="w-full bg-slate-50 p-6 rounded-[24px] outline-none">
-                    <select class="w-full bg-slate-50 p-6 rounded-[24px] outline-none text-slate-500 appearance-none">
-                        <option>Especialidad: Psiquiatría Infantil</option>
-                        <option>Especialidad: Psicología Clínica</option>
-                        <option>Especialidad: Asistencia Social</option>
-                    </select>
-                    <input type="text" placeholder="Número de Colegiatura" class="w-full bg-slate-50 p-6 rounded-[24px] outline-none">
-                    <button onclick="enterApp()" class="w-full bg-[#FF8BA7] text-white py-6 rounded-[24px] font-black uppercase text-xs shadow-xl shadow-pink-100 mt-4">Enviar para Validación</button>
-                    <button onclick="toggleAuth('login')" class="w-full text-xs font-bold text-slate-400 mt-6 uppercase tracking-widest">Ya tengo cuenta</button>
+                    <input type="email" placeholder="Correo institucional" class="w-full bg-slate-50 p-6 rounded-[24px] outline-none">
+                    <input type="password" placeholder="Contraseña" class="w-full bg-slate-50 p-6 rounded-[24px] outline-none">
+                    <button onclick="login('specialist')" class="w-full bg-slate-900 text-white py-6 rounded-[24px] font-black uppercase text-xs mt-4">Validar Acceso</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <div id="app-dashboard" class="fixed inset-0 z-[200] bg-[#F8F9FD] hidden flex-col md:flex-row p-4 md:p-6 gap-6">
-        <aside class="w-full md:w-80 bg-slate-900 rounded-[40px] p-8 flex flex-col justify-between shadow-2xl">
-            <div>
-                <div class="flex items-center gap-4 mb-16">
-                    <div class="w-12 h-12 bg-[#FF8BA7] rounded-2xl flex items-center justify-center text-white font-black text-2xl">P</div>
+    <section id="app-inicio" class="hidden-section min-h-screen bg-[#F8F9FD] p-4 md:p-8">
+        <div class="max-w-7xl mx-auto">
+            <div id="app-view-user" class="hidden-section space-y-6">
+                <header class="flex justify-between items-center bg-white p-6 rounded-[32px] shadow-sm">
+                    <h2 id="user-greet" class="lexend text-2xl text-slate-900">¡Hola!</h2>
+                    <button onclick="location.reload()" class="text-[10px] font-black text-rose-400 uppercase">Salir</button>
+                </header>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="md:col-span-2 bento-card p-10 bg-[#7161EF] text-white">
+                        <div id="ani-avatar-app" class="text-6xl mb-6">🐆</div>
+                        <h3 class="lexend text-3xl mb-4">Anie te acompaña</h3>
+                        <p class="text-indigo-100 mb-8">¿Cómo te sientes hoy? Podemos ahorrar semillas o conversar.</p>
+                        <button onclick="document.getElementById('demo').scrollIntoView()" class="bg-white text-indigo-600 px-8 py-3 rounded-2xl font-black text-[10px] uppercase">Hablar con Anie</button>
+                    </div>
+                    <div class="bento-card p-10 bg-white text-center">
+                        <div class="text-3xl mb-4">🏠</div>
+                        <h3 class="lexend text-xl mb-4">La Casita</h3>
+                        <div class="bg-slate-50 p-6 rounded-3xl border border-slate-100">
+                            <p class="text-[9px] font-black text-slate-400 uppercase mb-1">Semillas</p>
+                            <p class="text-4xl font-black text-slate-900">120</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="app-view-specialist" class="hidden-section space-y-6">
+                <header class="flex justify-between items-center bg-slate-900 text-white p-8 rounded-[32px]">
                     <div>
-                        <span class="lexend text-white text-xl block leading-none">Aliados</span>
-                        <span class="text-[9px] text-white/40 font-black tracking-[0.2em] uppercase">Protegidas v2.0</span>
+                        <h2 class="lexend text-2xl">Panel Bio-Social</h2>
+                        <p class="text-[9px] font-black opacity-50 uppercase tracking-widest tracking-tight">Especialista Activo</p>
                     </div>
-                </div>
-                <nav class="space-y-3">
-                    <div class="flex items-center gap-4 p-5 bg-white/10 text-white rounded-[24px] font-bold cursor-pointer border border-white/5 shadow-lg">
-                        <span class="text-xl">👤</span>
-                        <span class="text-sm">Mis Pacientes</span>
+                    <button onclick="location.reload()" class="bg-white/10 px-6 py-2 rounded-xl text-[10px] font-bold uppercase">Cerrar Sesión</button>
+                </header>
+                <div class="grid md:grid-cols-4 gap-6">
+                    <div class="bento-card p-8 bg-white text-center">
+                        <p class="text-[9px] font-black text-slate-400 uppercase mb-2">Casos Activos</p>
+                        <p class="text-4xl font-black text-indigo-600">24</p>
                     </div>
-                    <div class="flex items-center gap-4 p-5 text-white/50 hover:bg-white/5 rounded-[24px] font-semibold cursor-pointer transition">
-                        <span class="text-xl">📊</span>
-                        <span class="text-sm">Alertas IA</span>
+                    <div class="bento-card p-8 bg-white text-center border-l-4 border-rose-400">
+                        <p class="text-[9px] font-black text-slate-400 uppercase mb-2">Alertas Rojas</p>
+                        <p class="text-4xl font-black text-rose-500">02</p>
                     </div>
-                    <div class="flex items-center gap-4 p-5 text-white/50 hover:bg-white/5 rounded-[24px] font-semibold cursor-pointer transition">
-                        <span class="text-xl">🤝</span>
-                        <span class="text-sm">Comunidad Rural</span>
-                    </div>
-                </nav>
-            </div>
-            <button onclick="location.reload()" class="flex items-center gap-4 p-5 text-rose-400 font-black text-xs uppercase tracking-widest hover:bg-rose-500/10 rounded-[24px] transition">
-                <span>🚪 Salir del Sistema</span>
-            </button>
-        </aside>
-
-        <main class="flex-1 grid grid-cols-1 lg:grid-cols-12 gap-6 overflow-y-auto pb-20 md:pb-0">
-            <div class="lg:col-span-8 bento-card p-10 flex flex-col items-center relative overflow-hidden bg-white border-2 border-slate-50">
-                <div class="scan-line"></div>
-                <div class="w-full flex justify-between items-start mb-12 relative z-10">
-                    <div>
-                        <div class="flex items-center gap-3 mb-2">
-                            <h2 class="lexend text-4xl text-slate-800">Lucía F.</h2>
-                            <span class="bg-green-100 text-green-600 text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-tighter">Match 95% (Otorongo)</span>
+                    <div class="md:col-span-2 bento-card p-8 bg-white flex items-center justify-between">
+                        <div>
+                            <h4 class="lexend text-lg">Esqueleto Predictivo</h4>
+                            <p class="text-xs text-slate-400">Monitor de riesgo activo</p>
                         </div>
-                        <p class="text-slate-400 font-bold flex items-center gap-2">
-                            <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span> 
-                            Monitoreo en tiempo real • Loreto, Perú
-                        </p>
-                    </div>
-                    <div class="bg-indigo-50 p-4 rounded-3xl text-center min-w-[120px]">
-                        <p class="text-[10px] font-black text-indigo-400 uppercase tracking-widest mb-1">Bienestar</p>
-                        <p class="text-4xl font-black text-[#7161EF]">98%</p>
-                    </div>
-                </div>
-
-                <div class="relative w-full max-w-sm aspect-[3/4] flex items-center justify-center">
-                    <svg viewBox="0 0 200 500" class="h-full w-auto opacity-20 text-[#7161EF]" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="100" cy="80" r="45" />
-                        <path d="M60 130 L140 130 L155 320 L45 320 Z" />
-                        <path d="M40 140 L20 280 M160 140 L180 280" />
-                        <path d="M75 330 L65 480 M125 330 L135 480" />
-                    </svg>
-                    <div class="absolute top-[15%] group cursor-help">
-                        <div class="w-4 h-4 bg-[#7161EF] rounded-full animate-ping absolute"></div>
-                        <div class="w-4 h-4 bg-[#7161EF] rounded-full relative shadow-lg"></div>
-                        <div class="absolute hidden group-hover:block left-6 top-0 glass p-3 rounded-2xl w-48 z-50">
-                            <p class="text-[10px] font-black text-slate-400 uppercase mb-1">Detección Psicológica</p>
-                            <p class="text-xs font-bold text-slate-700">Lenguaje positivo detectado por Anie en el chat diario.</p>
-                        </div>
-                    </div>
-                    <div class="absolute top-[45%] left-[40%] group cursor-help">
-                        <div class="w-4 h-4 bg-[#FF8BA7] rounded-full animate-pulse shadow-lg shadow-pink-200"></div>
-                        <div class="absolute hidden group-hover:block left-6 top-0 glass p-3 rounded-2xl w-48 z-50">
-                            <p class="text-[10px] font-black text-slate-400 uppercase mb-1">Actividad Física</p>
-                            <p class="text-xs font-bold text-slate-700">Nivel de energía óptimo basado en misiones de ahorro.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-2 md:grid-cols-3 gap-4 w-full mt-12 relative z-10">
-                    <div class="p-5 border border-slate-100 rounded-3xl bg-slate-50/50">
-                        <p class="text-[9px] font-black text-slate-400 uppercase tracking-[0.2em] mb-2">Comportamiento</p>
-                        <p class="font-bold text-slate-700">Resiliencia Alta</p>
-                    </div>
-                    <div class="p-5 border border-slate-100 rounded-3xl bg-slate-50/50">
-                        <p class="text-[9px] font-black text-slate-400 uppercase tracking-[0.2em] mb-2">Salud Física</p>
-                        <p class="font-bold text-slate-700">Nutrición Adecuada</p>
-                    </div>
-                    <div class="p-5 border border-slate-100 rounded-3xl bg-slate-900 text-white col-span-2 md:col-span-1">
-                        <p class="text-[9px] font-black text-white/40 uppercase tracking-[0.2em] mb-2">Próxima Sesión</p>
-                        <p class="font-bold">Mañana 10:00 AM</p>
+                        <button onclick="document.getElementById('demo').scrollIntoView()" class="bg-slate-900 text-white px-6 py-3 rounded-2xl text-[9px] font-black uppercase">Ir al Monitor</button>
                     </div>
                 </div>
             </div>
-
-            <div class="lg:col-span-4 flex flex-col gap-6">
-                <div class="bento-card p-8 bg-[#7161EF] text-white flex-1 relative overflow-hidden group">
-                    <div class="relative z-10">
-                        <h3 class="lexend text-2xl mb-8 flex items-center gap-3">
-                            La Casita <span class="text-xs bg-white/20 px-3 py-1 rounded-full font-bold">Nivel 4</span>
-                        </h3>
-                        <div class="space-y-6">
-                            <div class="bg-white/10 p-5 rounded-3xl border border-white/10">
-                                <p class="text-[10px] font-black opacity-60 mb-2 uppercase tracking-widest">Semillas Ahorradas</p>
-                                <div class="flex items-end gap-2">
-                                    <span class="text-4xl font-black">1,240</span>
-                                    <span class="text-sm font-bold opacity-70 mb-1">puntos</span>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-4">
-                                <div class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-xl shadow-lg">🎒</div>
-                                <div>
-                                    <p class="font-bold text-sm">Próximo Objetivo</p>
-                                    <p class="text-xs opacity-60 italic">Útiles escolares para el ciclo 2026</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <svg class="absolute -right-10 -bottom-10 w-48 h-48 text-white/5 transform group-hover:rotate-12 transition-transform" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3L2 12h3v8h14v-8h3L12 3zm0 2.84L18.16 11H17v7H7v-7H5.84L12 5.84zM10 13h4v2h-4v-2z"/></svg>
-                </div>
-
-                <div class="bento-card p-8 bg-white border-2 border-slate-50">
-                    <h3 class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-6">Red de Confianza</h3>
-                    <div class="space-y-4">
-                        <div class="flex items-center justify-between p-4 bg-slate-50 rounded-[24px]">
-                            <div class="flex items-center gap-3">
-                                <div class="w-10 h-10 bg-pink-100 rounded-full flex items-center justify-center text-sm">👩</div>
-                                <div>
-                                    <p class="text-sm font-bold text-slate-700">Martha (Madre)</p>
-                                    <p class="text-[10px] text-green-500 font-black uppercase">Verificada</p>
-                                </div>
-                            </div>
-                            <span class="text-xs font-black text-slate-300">#001</span>
-                        </div>
-                        <div class="flex items-center justify-between p-4 bg-slate-50 rounded-[24px]">
-                            <div class="flex items-center gap-3">
-                                <div class="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center text-sm">🏫</div>
-                                <div>
-                                    <p class="text-sm font-bold text-slate-700">Prof. Juan C.</p>
-                                    <p class="text-[10px] text-slate-400 font-black uppercase">Enlace Escolar</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </main>
-    </div>
+        </div>
+    </section>
 
     <script>
-        function showAuth() {
-            document.getElementById('auth-layer').style.display = 'flex';
+        // LÓGICA DE NAVEGACIÓN
+        function showAuth(type) {
+            document.getElementById('auth-layer').classList.remove('hidden');
+            document.getElementById('form-user').classList.add('hidden-section');
+            document.getElementById('form-specialist').classList.add('hidden-section');
+            document.getElementById(`form-${type}`).classList.remove('hidden-section');
             document.body.style.overflow = 'hidden';
         }
 
         function hideAuth() {
-            document.getElementById('auth-layer').style.display = 'none';
+            document.getElementById('auth-layer').classList.add('hidden');
             document.body.style.overflow = 'auto';
         }
 
-        function toggleAuth(view) {
-            document.getElementById('login-form').classList.toggle('hidden', view === 'reg');
-            document.getElementById('reg-form').classList.toggle('hidden', view === 'login');
+        function login(role) {
+            document.getElementById('landing-page').classList.add('hidden-section');
+            document.getElementById('auth-layer').classList.add('hidden');
+            document.getElementById('app-inicio').classList.remove('hidden-section');
+            document.body.style.overflow = 'auto';
+
+            if(role === 'user') {
+                const nickname = document.getElementById('reg-nickname').value || "Amiga";
+                const pet = document.getElementById('reg-pet').value;
+                document.getElementById('app-view-user').classList.remove('hidden-section');
+                document.getElementById('user-greet').innerText = `¡Hola, ${nickname}!`;
+                document.getElementById('ani-avatar-app').innerText = getEmoji(pet);
+            } else {
+                document.getElementById('app-view-specialist').classList.remove('hidden-section');
+            }
+            window.scrollTo(0,0);
         }
 
-        function enterApp() {
-            // Animación de transición suave
-            const auth = document.getElementById('auth-layer');
-            auth.style.opacity = '0';
-            auth.style.transition = 'opacity 0.5s ease';
-            
+        function getEmoji(pet) {
+            const emojis = { 'otorongo': '🐆', 'alpaca': '🦙', 'delfin': '🐬', 'perro': '🐶' };
+            return emojis[pet] || '🐾';
+        }
+
+        // MOTOR DE IA DE RIESGO
+        const SEMANTICA = {
+            critico: ['morir', 'mori', 'muerte', 'matar', 'sangre', 'auxilio', 'suicidio'],
+            riesgo: ['miedo', 'peligro', 'asustada', 'triste', 'golpe', 'toco'],
+            broma: ['broma', 'mentira', 'jugando', 'chiste']
+        };
+        let alertaActiva = false;
+
+        function simulateChat() {
+            const input = document.getElementById('demo-input');
+            const chatBox = document.getElementById('chat-box');
+            const text = input.value.trim().toLowerCase();
+            if (!text) return;
+
+            chatBox.innerHTML += `<div class="flex justify-end mb-4"><div class="bg-[#7161EF] text-white p-4 rounded-2xl rounded-tr-none max-w-[85%]">${text}</div></div>`;
+
             setTimeout(() => {
-                auth.classList.add('hidden');
-                document.getElementById('landing-page').classList.add('hidden');
-                const dash = document.getElementById('app-dashboard');
-                dash.classList.remove('hidden');
-                dash.classList.add('flex');
-            }, 500);
+                let resp = "¡Qué bueno seguir charlando! Cuéntame más. ✨";
+                
+                if (alertaActiva && SEMANTICA.broma.some(p => text.includes(p))) {
+                    resp = `Entiendo que sea broma, pero **tu seguridad es lo más importante**. Jugar con temas así es delicado. Aquí puedes hablar con confianza. 🐆`;
+                    logSpec("USUARIO INDICA BROMA - MANTENIENDO ALERTA");
+                } else if (SEMANTICA.critico.some(p => text.includes(p))) {
+                    alertaActiva = true;
+                    updateMonitor(100, "CRÍTICO");
+                    resp = `Dime, ¿lo dices en serio? **Hablar sobre el peligro no es un juego**, y estoy aquí para cuidarte. ¿Hay algo que te asuste?`;
+                } else if (SEMANTICA.riesgo.some(p => text.includes(p))) {
+                    alertaActiva = true;
+                    updateMonitor(65, "PREVENTIVO");
+                    resp = `Siento que algo te preocupa. Recuerda que este es un lugar seguro. ¿Quieres contarme más? 🐾`;
+                }
+
+                chatBox.innerHTML += `<div class="flex justify-start mb-4"><div class="bg-slate-100 p-4 rounded-2xl rounded-tl-none max-w-[85%] border-l-4 ${alertaActiva ? 'border-rose-400' : 'border-transparent'}">${resp}</div></div>`;
+                input.value = '';
+                chatBox.scrollTop = chatBox.scrollHeight;
+            }, 800);
         }
 
-        // Cerrar con tecla ESC
-        document.addEventListener('keydown', (e) => {
-            if (e.key === "Escape") hideAuth();
-        });
+        function updateMonitor(score, tipo) {
+            document.getElementById('status-tag').innerText = `ALERTA ${tipo}`;
+            document.getElementById('status-tag').className = "absolute top-8 right-8 bg-rose-600 text-white px-4 py-1.5 rounded-full text-[9px] font-black animate-pulse";
+            document.getElementById('risk-bar').style.width = `${score}%`;
+            document.getElementById('risk-bar').className = "h-full bg-rose-500 transition-all duration-1000";
+            document.getElementById('risk-percent').innerText = `${score}%`;
+            document.getElementById('skeleton-svg').classList.replace('text-slate-700', 'text-rose-500');
+            logSpec(`RIESGO DETECTADO: ${score}% - NIVEL ${tipo}`);
+        }
 
-        console.log("PROTEGIDAS™ Health Fintech System - Initialized 2026");
+        function logSpec(msg) {
+            const consoleLog = document.getElementById('alert-console');
+            consoleLog.innerHTML = `> [${new Date().toLocaleTimeString()}] ${msg}<br>` + consoleLog.innerHTML;
+        }
     </script>
 </body>
 </html>
